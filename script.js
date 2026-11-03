@@ -13,4 +13,13 @@ document.getElementById("boton").addEventListener("click", function () {
     const nombreFormateado = nombre.trim().toUpperCase();
     document.getElementById("panel").innerHTML = "Jugador: " + nombreFormateado + "<br>Edad: " + edad + " años";
   }
+
+  const panel = document.getElementById("panel");
+  if (edad < 18) {
+    panel.style.backgroundColor = "lightgreen";
+  } else {
+    panel.style.backgroundColor = "lightblue";
+  }
+  panel.style.padding = "10px";
+
 });
