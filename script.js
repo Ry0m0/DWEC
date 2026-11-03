@@ -9,6 +9,8 @@ document.getElementById("boton").addEventListener("click", function () {
   if (nombre === "" || fecha === "" || nacimiento >= hoy || edad < 10) {
     document.getElementById("mensaje").textContent = "Acceso denegado";
   } else {
-    document.getElementById("mensaje").textContent = "Hola " + nombre;
+    document.getElementById("mensaje").textContent = "";
+    const nombreFormateado = nombre.trim().toUpperCase();
+    document.getElementById("panel").textContent = "Jugador: " + nombreFormateado;
   }
 });
