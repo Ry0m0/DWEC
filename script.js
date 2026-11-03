@@ -11,6 +11,6 @@ document.getElementById("boton").addEventListener("click", function () {
   } else {
     document.getElementById("mensaje").textContent = "";
     const nombreFormateado = nombre.trim().toUpperCase();
-    document.getElementById("panel").textContent = "Jugador: " + nombreFormateado;
+    document.getElementById("panel").innerHTML = "Jugador: " + nombreFormateado + "<br>Edad: " + edad + " años";
   }
 });
