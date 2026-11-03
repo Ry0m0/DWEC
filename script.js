@@ -21,5 +21,12 @@ document.getElementById("boton").addEventListener("click", function () {
     panel.style.backgroundColor = "lightblue";
   }
   panel.style.padding = "10px";
+});
 
+let puntos = 0;
+
+document.getElementById("atacar").addEventListener("click", function () {
+  const ganados = Math.round(Math.random() * 10);
+  puntos = puntos + ganados;
+  document.getElementById("puntos").textContent = "Puntos: " + puntos;
 });
