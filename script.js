@@ -25,6 +25,7 @@ document.getElementById("boton").addEventListener("click", function () {
 
 localStorage.setItem("jugador", nombreFormateado);
 sessionStorage.setItem("puntosPartida", "0");
+document.cookie = "ultimoAcceso=" + nombreFormateado + "; max-age=300; path=/";
 
 
 let puntos = 0;
