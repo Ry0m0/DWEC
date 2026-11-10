@@ -11,10 +11,12 @@
     <p id="mensajeAyuda"></p>
 
     <script>
+        // Recibimos los datos de la ventana principal mediante la URL
+        // URLSearchParams analiza la dirección (ej: ayuda.html?nombre=JUAN)
         const params = new URLSearchParams(window.location.search);
         const nombreRecibido = params.get("nombre");
 
-
+        // Si el nombre no está vacío, mostramos el mensaje personalizado
         if (nombreRecibido) {
             document.getElementById("mensajeAyuda").textContent = "¡Hola " + nombreRecibido + "! Haz clic en Atacar para ganar puntos.";
         } else {

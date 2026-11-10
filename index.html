@@ -3,26 +3,27 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Ayuda</title>
+  <title>Juego</title>
+  <!-- IMPORTANTE: El script se carga en el HEAD con 'defer' para que espere a que el HTML esté listo -->
+  <script src="script.js" defer></script>
 </head>
 
 <body>
-  <h2>Ayuda del Juego</h2>
-  <p id="mensajeAyuda"></p>
+  <!-- Formulario de registro -->
+  <input type="text" id="nombre" placeholder="Nombre">
+  <input type="date" id="fecha">
+  <button id="boton">Entrar</button>
+  <p id="mensaje"></p>
 
-  <script>
-    // Recibimos los datos de la ventana principal mediante la URL
-    // URLSearchParams analiza la dirección (ej: ayuda.html?nombre=JUAN)
-    const params = new URLSearchParams(window.location.search);
-    const nombreRecibido = params.get("nombre");
+  <!-- Panel de información del jugador -->
+  <div id="panel"></div>
 
-    // Si el nombre no está vacío, mostramos el mensaje personalizado
-    if (nombreRecibido) {
-      document.getElementById("mensajeAyuda").textContent = "¡Hola " + nombreRecibido + "! Haz clic en Atacar para ganar puntos.";
-    } else {
-      document.getElementById("mensajeAyuda").textContent = "Hola desconocido.";
-    }
-  </script>
+  <!-- Zona de juego -->
+  <button id="atacar">Atacar</button>
+  <p id="puntos">Puntos: 0</p>
+
+  <!-- Botón para abrir la ventana adicional -->
+  <button id="btnAyuda">Abrir Ventana de Ayuda</button>
 </body>
 
 </html>
