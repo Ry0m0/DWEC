@@ -45,3 +45,8 @@ document.getElementById("atacar").addEventListener("click", function () {
   document.getElementById("puntos").textContent = "Puntos: " + puntos + " | Misión: " + misionActual;
   sessionStorage.setItem("puntosPartida", puntos);
 });
+
+document.getElementById("btnAyuda").addEventListener("click", function () {
+  const nombreGuardado = localStorage.getItem("jugador") || "Desconocido";
+  window.open("ayuda.html?nombre=" + encodeURIComponent(nombreGuardado), "Ayuda", "width=400,height=300");
+});
