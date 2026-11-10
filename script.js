@@ -33,7 +33,9 @@ document.getElementById("atacar").addEventListener("click", function () {
   const misionActual = misiones[indiceAleatorio];
 
   const ganados = Math.round(Math.random() * 10);
+  ganados = Math.max(1, ganados);
+
   puntos = puntos + ganados;
-  
- document.getElementById("puntos").textContent = "Puntos: " + puntos + " | Misión: " + misionActual;
+
+  document.getElementById("puntos").textContent = "Puntos: " + puntos + " | Misión: " + misionActual;
 });
