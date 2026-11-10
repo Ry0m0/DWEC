@@ -26,7 +26,14 @@ document.getElementById("boton").addEventListener("click", function () {
 let puntos = 0;
 
 document.getElementById("atacar").addEventListener("click", function () {
+
+  const misiones = ["Derrotar al dragón", "Encontrar el tesoro", "Salvar a la princesa", "Escalar la montaña"];
+
+  const indiceAleatorio = Math.floor(Math.random() * misiones.length);
+  const misionActual = misiones[indiceAleatorio];
+
   const ganados = Math.round(Math.random() * 10);
   puntos = puntos + ganados;
-  document.getElementById("puntos").textContent = "Puntos: " + puntos;
+  
+ document.getElementById("puntos").textContent = "Puntos: " + puntos + " | Misión: " + misionActual;
 });
