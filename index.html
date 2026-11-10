@@ -3,19 +3,26 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Juego</title>
-  <script src="script.js" defer></script>
+  <title>Ayuda</title>
 </head>
 
 <body>
-  <input type="text" id="nombre" placeholder="Nombre">
-  <input type="date" id="fecha">
-  <button id="boton">Entrar</button>
-  <p id="mensaje"></p>
-  <div id="panel"></div>
-  <button id="atacar">Atacar</button>
-  <p id="puntos">Puntos: 0</p>
-  <button id="btnAyuda">Abrir Ventana de Ayuda</button>
+  <h2>Ayuda del Juego</h2>
+  <p id="mensajeAyuda"></p>
+
+  <script>
+    // Recibimos los datos de la ventana principal mediante la URL
+    // URLSearchParams analiza la dirección (ej: ayuda.html?nombre=JUAN)
+    const params = new URLSearchParams(window.location.search);
+    const nombreRecibido = params.get("nombre");
+
+    // Si el nombre no está vacío, mostramos el mensaje personalizado
+    if (nombreRecibido) {
+      document.getElementById("mensajeAyuda").textContent = "¡Hola " + nombreRecibido + "! Haz clic en Atacar para ganar puntos.";
+    } else {
+      document.getElementById("mensajeAyuda").textContent = "Hola desconocido.";
+    }
+  </script>
 </body>
 
 </html>
