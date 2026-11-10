@@ -23,6 +23,10 @@ document.getElementById("boton").addEventListener("click", function () {
   panel.style.padding = "10px";
 });
 
+localStorage.setItem("jugador", nombreFormateado);
+sessionStorage.setItem("puntosPartida", "0");
+
+
 let puntos = 0;
 
 document.getElementById("atacar").addEventListener("click", function () {
@@ -38,4 +42,5 @@ document.getElementById("atacar").addEventListener("click", function () {
   puntos = puntos + ganados;
 
   document.getElementById("puntos").textContent = "Puntos: " + puntos + " | Misión: " + misionActual;
+  sessionStorage.setItem("puntosPartida", puntos);
 });
