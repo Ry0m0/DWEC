@@ -23,3 +23,31 @@ output.innerHTML += "Admin actual: " + alumno.admin + "<br>";
 
 // 3. Quitamos la propiedad admin del objeto
 delete alumno.admin;
+
+// 4. Función fuera del objeto para recorrer sus propiedades
+function mostrarPropiedades(obj) {
+    for (let clave in obj) {
+        let valor = obj[clave];
+
+        // Si el valor es una función, no lo mostramos
+        if (typeof valor === "function") {
+            continue;
+        }
+
+        // Si el valor es un objeto (y no es null), recorremos sus propiedades internas
+        if (typeof valor === "object" && valor !== null) {
+            output.innerHTML += clave + ":<br>";
+            for (let subClave in valor) {
+                if (typeof valor[subClave] !== "function") {
+                    output.innerHTML += "&nbsp;&nbsp;&nbsp;&nbsp;" + subClave + ": " + valor[subClave] + "<br>";
+                }
+            }
+        } else {
+            // Propiedad normal (como edad)
+            output.innerHTML += clave + ": " + valor + "<br>";
+        }
+    }
+}
+
+// Llamamos a la función pasando el objeto alumno
+mostrarPropiedades(alumno);
